@@ -7,17 +7,10 @@
 #' @param sig sigma used in algorithm, default to be 1
 #' @param lambda lambda used in algorithm, default to be 1
 #' @keywords IM4E
-#' @return \item{name a}{description a} 
-#' @return \item{name a}{description a} 
-#' @export
-#' @examples
-#' data(park)
-#' xx<-park$xx
-#' yy<-park$yy
-#' w0 <- rep(1,ncol(xx))/ncol(xx)
-#' re<-one.IM4E(xx,yy,w0)
-#' print(re$w)
-
+#' @return \item{w}{weights} 
+#' @return \item{C}{cost} 
+#' 
+#' 
 one.IM4E<-function(train_xx,train_yy,w,sig=1,lambda=1){
   # compute the sample size and the number of variables
   N<-nrow(train_xx)

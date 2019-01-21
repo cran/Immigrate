@@ -1,17 +1,19 @@
-#' pred.IM4E
+#' predict.IM4E
 #'
 #' This function performs the predion for IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
-#' @param re weight or result of IM4E algorithm
+#' @param object weight or result of IM4E algorithm
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector 
-#' @param newx model matrix to be preded 
+#' @param newx model matrix to be predicted 
 #' @param sig sigma used in algorithm, default to be 1
-#' @param type the form of final output
-#' @keywords pred IM4E
+#' @param type the form of final output, default to be "both"
+#' @param ... further arguments passed to or from other methods
+#' @keywords predict IM4E
 #' @return \item{response}{preded probabilities for newx}
 #' @return \item{class}{ preded class for newx}
-#' @export
+#' @importFrom stats predict
 
+#' @export
 #' @examples
 #' data(park)
 #' xx<-park$xx
@@ -22,18 +24,23 @@
 #' train_yy<-yy[-index]
 #' test_yy<-yy[index]
 #' re<-IM4E(train_xx,train_yy)
-#' pred.res<-pred.IM4E(re,train_xx,train_yy,test_xx,type="class")
-#' print(pred.res)
+#' res<-predict(re,train_xx,train_yy,test_xx,type="class")
+#' print(res)
 #' 
-pred.IM4E<-function(re,xx,yy,newx,sig = 1, type){
+predict.IM4E<-function(object,xx,yy,newx,sig = 1, type = "both",...){
+  TYPES <- c("both","response","class") 
+  typeIdx <- pmatch(type, TYPES)
+  if (is.na(typeIdx)){
+    stop("Invalid type")
+  }
   yy<-as.numeric(yy)
   if (ncol(xx) != ncol(newx)){
     stop("xx and newx have different lengths of explanatory variables")
   }
-  if (is.list(re)){
-    w<-matrix(re$w)  
+  if (is.list(object)){
+    w<-matrix(object$w)  
   }else{
-    w<-re
+    w<-object
   }
   
   label<-unique(yy)
@@ -56,7 +63,7 @@ pred.IM4E<-function(re,xx,yy,newx,sig = 1, type){
     label[which.min(v[i,])]
   })
   
-  if (missing(type)){
+  if (type == "both"){
     newList<-list("class"=pred,"prob"=v)
     return(newList) 
   }else if(type == "response"){

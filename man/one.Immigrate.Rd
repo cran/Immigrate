@@ -4,7 +4,7 @@
 \alias{one.Immigrate}
 \title{one.Immigrate}
 \usage{
-one.Immigrate(train_xx, train_yy, W, sig = 1, lambda = 1)
+one.Immigrate(train_xx, train_yy, W, sig = 1)
 }
 \arguments{
 \item{train_xx}{model matrix of explanatory variables}
@@ -14,8 +14,6 @@ one.Immigrate(train_xx, train_yy, W, sig = 1, lambda = 1)
 \item{W}{initial weight matrix}
 
 \item{sig}{sigma used in algorithm, default to be 1}
-
-\item{lambda}{lambda used in algorithm, default to be 1}
 }
 \value{
 \item{W}{new weight matrix after one loop}
@@ -32,5 +30,7 @@ yy<-park$yy
 W0 <- diag(rep(1,ncol(xx)),ncol(xx))/sqrt(ncol(xx))
 re<-one.Immigrate(xx,yy,W0)
 print(re$w)
+
 }
-\keyword{Immigrateone}
+\keyword{Immigrate}
+\keyword{one}

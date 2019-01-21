@@ -14,7 +14,7 @@
 #' @return \item{recall_test}{ recall for test data}
 #' @return \item{F1_test}{ F1 score for test data}
 #' @return \item{thre}{ threshold to separate two labels, obtained from training data}
-#' @import pROC
+#' @importFrom pROC roc
 #' 
 #' @export
 #' @examples

@@ -11,6 +11,7 @@
 #' @return \item{w}{new weight after one loop}
 #' @return \item{C}{ cost after one loop}
 #' @export
+#' 
 #' @examples
 #' data(park)
 #' xx<-park$xx

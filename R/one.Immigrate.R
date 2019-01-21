@@ -5,11 +5,11 @@
 #' @param train_yy label vector
 #' @param W initial weight matrix
 #' @param sig sigma used in algorithm, default to be 1
-#' @param lambda lambda used in algorithm, default to be 1
-#' @keywords Immigrateone
+#' @keywords Immigrate one
 #' @return \item{W}{new weight matrix after one loop}
 #' @return \item{C}{ cost after one loop}
 #' @export
+#' 
 #' @examples
 #' data(park)
 #' xx<-park$xx
@@ -17,7 +17,8 @@
 #' W0 <- diag(rep(1,ncol(xx)),ncol(xx))/sqrt(ncol(xx))
 #' re<-one.Immigrate(xx,yy,W0)
 #' print(re$w)
-one.Immigrate<-function(train_xx,train_yy,W,sig=1,lambda=1){
+#' 
+one.Immigrate<-function(train_xx,train_yy,W,sig=1){
   # compute the sample size and the number of variables
   N<-nrow(train_xx)
   p<-ncol(train_xx)

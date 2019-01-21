@@ -18,19 +18,11 @@ one.IM4E(train_xx, train_yy, w, sig = 1, lambda = 1)
 \item{lambda}{lambda used in algorithm, default to be 1}
 }
 \value{
-\item{name a}{description a}
+\item{w}{weights}
 
-\item{name a}{description a}
+\item{C}{cost}
 }
 \description{
 This function performs Iterative Margin-Maximization under Max-Min Entropy algorithm for one loop.
-}
-\examples{
-data(park)
-xx<-park$xx
-yy<-park$yy
-w0 <- rep(1,ncol(xx))/ncol(xx)
-re<-one.IM4E(xx,yy,w0)
-print(re$w)
 }
 \keyword{IM4E}

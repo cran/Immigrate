@@ -4,13 +4,13 @@
 \alias{IM4E}
 \title{IM4E}
 \usage{
-IM4E(train_xx, train_yy, epsilon = 0.01, sig = 1, lambda = 1,
-  max_iter = 10, removesmall = FALSE)
+IM4E(xx, yy, epsilon = 0.01, sig = 1, lambda = 1, max_iter = 10,
+  removesmall = FALSE)
 }
 \arguments{
-\item{train_xx}{model matrix of explanatory variables}
+\item{xx}{model matrix of explanatory variables}
 
-\item{train_yy}{label vector}
+\item{yy}{label vector}
 
 \item{epsilon}{criterion for stopping iteration}
 

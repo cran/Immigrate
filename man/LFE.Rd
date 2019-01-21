@@ -4,12 +4,12 @@
 \alias{LFE}
 \title{LFE}
 \usage{
-LFE(train_xx, train_yy, T = 5)
+LFE(xx, yy, T = 5)
 }
 \arguments{
-\item{train_xx}{model matrix of explanatory variables}
+\item{xx}{model matrix of explanatory variables}
 
-\item{train_yy}{label vector}
+\item{yy}{label vector}
 
 \item{T}{number of instance used to update weights, default to be 5}
 }

@@ -1,15 +1,18 @@
-#' pred.Immigrate
+#' predict.Immigrate
 #'
 #' This function performs the predion for Immigrate(Iterative Max-Min Entropy Margin-Maximization with Interaction Terms) algorithm.
-#' @param re result of Immigrate algorithm
+#' @param object result of Immigrate algorithm
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector 
 #' @param newx model matrix to be preded 
 #' @param sig sigma used in algorithm, default to be 1
-#' @param type the form of final output
-#' @keywords pred Immigrate
+#' @param type the form of final output, default to be "both"
+#' @param ... further arguments passed to or from other methods
+#' @keywords predict Immigrate
 #' @return \item{response}{preded probabilities for newx}
 #' @return \item{class}{preded class for newx}
+#' @importFrom stats predict
+
 #' @export
 #' @examples
 #' data(park)
@@ -21,18 +24,26 @@
 #' train_yy<-yy[-index]
 #' test_yy<-yy[index]
 #' re<-Immigrate(train_xx,train_yy)
-#' pred.res<-pred.Immigrate(re,train_xx,train_yy,test_xx,type="class")
-#' print(pred.res)
+#' res<-predict(re,train_xx,train_yy,test_xx,type="class")
+#' print(res)
 #' 
-pred.Immigrate<-function(re,xx,yy,newx,sig = 1, type){
+predict.Immigrate<-function(object,xx,yy,newx,sig = 1, type = "both",...){
+  TYPES <- c("both","response","class") 
+  typeIdx <- pmatch(type, TYPES)
+  if (is.na(typeIdx)){
+    stop("Invalid type")
+  }
   yy<-as.numeric(yy)
+  if ((!(is.matrix(newx)))&length(newx)==ncol(xx)){
+    newx<-matrix(newx,nrow = 1)
+  }
   if (ncol(xx) != ncol(newx)){
     stop("xx and newx have different lengths of explanatory variables")
   }
-  if(is.list(re)){
-    w<-re$w
+  if(is.list(object)){
+    w<-object$w
   }else{
-    w<-re 
+    w<-object
   }
   label<-unique(yy)
   v<-sapply(c(1:length(label)),function(j){
@@ -49,15 +60,18 @@ pred.Immigrate<-function(re,xx,yy,newx,sig = 1, type){
     })
   })
   
-  
+  if (nrow(newx)==1){
+    v<-v/sum(v)
+    pred<-label[which.min(v)]
+  }else{ 
   myfun<-sapply(c(1:nrow(newx)), function(i){
     v[i,]<<-v[i,]/sum(v[i,])
   })
   pred<-sapply(c(1:nrow(newx)),function(i){
     label[which.min(v[i,])]
   })
-  
-  if (missing(type)){
+  }
+  if (type == "both"){
     newList<-list("class"=pred,"prob"=v)
     return(newList) 
   }else if(type == "response"){

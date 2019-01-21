@@ -4,23 +4,25 @@
 \alias{Immigrate}
 \title{Immigrate}
 \usage{
-Immigrate(train_xx, train_yy, epsilon = 0.01, sig = 1, lambda = 1,
-  max_iter = 10, removesmall = FALSE)
+Immigrate(xx, yy, w0, epsilon = 0.01, sig = 1, max_iter = 10,
+  removesmall = FALSE, randomw0 = FALSE)
 }
 \arguments{
-\item{train_xx}{model matrix of explanatory variables}
+\item{xx}{model matrix of explanatory variables}
 
-\item{train_yy}{label vector}
+\item{yy}{label vector}
+
+\item{w0}{initial weights}
 
 \item{epsilon}{criterion for stopping iteration}
 
 \item{sig}{sigma used in algorithm, default to be 1}
 
-\item{lambda}{lambda used in algorithm, default to be 1}
-
 \item{max_iter}{maximum number of iteration}
 
-\item{removesmall}{whether remove features with small weights, default to be FALSE}
+\item{removesmall}{whether to remove features with small weights, default to be FALSE}
+
+\item{randomw0}{whether to use randomly initial weights, default to be FALSE}
 }
 \value{
 \item{w}{new weight after one loop}
@@ -38,5 +40,11 @@ xx<-park$xx
 yy<-park$yy
 re<-Immigrate(xx,yy)
 print(re)
+}
+\references{
+Zhao R, Hong P, Liu J S. IMMIGRATE: A Margin-based Feature Selection Method with Interaction Terms[J]. arXiv preprint arXiv:1810.02658, 2018.
+}
+\seealso{
+\url{https://arxiv.org/abs/1810.02658} for more details.
 }
 \keyword{Immigrate}

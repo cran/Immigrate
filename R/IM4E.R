@@ -5,8 +5,8 @@ NULL
 #' IM4E
 #'
 #' This function performs IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
-#' @param train_xx model matrix of explanatory variables
-#' @param train_yy label vector
+#' @param xx model matrix of explanatory variables
+#' @param yy label vector
 #' @param epsilon criterion for stopping iteration
 #' @param sig sigma used in algorithm, default to be 1
 #' @param lambda lambda used in algorithm, default to be 1
@@ -23,11 +23,15 @@ NULL
 #' yy<-park$yy
 #' re<-IM4E(xx,yy)
 #' print(re)
-#' @references Bei Y, Hong P. Maximizing margin quality and quantity[C]//Machine Learning for Signal Processing (MLSP), 2015 IEEE 25th International Workshop on. IEEE, 2015: 1-6.
+#' @references 
+#' Bei Y, Hong P. Maximizing margin quality and quantity[C]//Machine Learning for Signal Processing (MLSP), 2015 IEEE 25th International Workshop on. IEEE, 2015: 1-6.
 
-IM4E <- function(train_xx,train_yy,epsilon=0.01,
+
+IM4E <- function(xx,yy,epsilon=0.01,
                  sig=1, lambda=1,max_iter=10,removesmall=FALSE) {
   suppressWarnings(
-  return(IM4ECpp(oneIM4E = one.IM4E,train_xx,train_yy,epsilon=0.01,
+  res<-(IM4ECpp(oneIM4E = one.IM4E,xx,yy,epsilon=0.01,
                  sig=1, lambda=1,max_iter=10,removesmall=FALSE)))
+  class(res)<-"IM4E"
+  return(res)
 }
