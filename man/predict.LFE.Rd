@@ -21,7 +21,7 @@
 predicted labels
 }
 \description{
-This function performs predion for LFE(Local Feature Extraction) algorithm.
+This function performs predition for LFE(Local Feature Extraction) algorithm.
 }
 \examples{
 data(park)

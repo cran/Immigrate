@@ -1,6 +1,6 @@
 #' predict.IM4E
 #'
-#' This function performs the predion for IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
+#' This function performs the predition for IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
 #' @param object weight or result of IM4E algorithm
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector 

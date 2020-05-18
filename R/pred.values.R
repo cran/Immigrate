@@ -6,7 +6,7 @@
 #' @param y_test label vector for test data 
 #' @param pred_train predicted probabilities for training data
 #' @param pred_test predicted probabilities for test data
-#' @keywords predict, values 
+#' @keywords predict
 #' @return \item{AUC_train}{AUC for training data}
 #' @return \item{AUC_test}{ AUC for test data}
 #' @return \item{accuracy_test}{ accuracy for test data}

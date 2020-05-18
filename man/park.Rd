@@ -4,7 +4,9 @@
 \name{park}
 \alias{park}
 \title{Parkinsons Dataset}
-\format{An object of class}
+\format{
+An object of class
+}
 \source{
 \href{https://archive.ics.uci.edu/ml/datasets/parkinsons}{parkinsons}
 }

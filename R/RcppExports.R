@@ -5,10 +5,6 @@ BIMCpp <- function(oneboostImmigrate, train_xx, train_yy, nIter = 10L, max_iter 
     .Call('_Immigrate_BIMCpp', PACKAGE = 'Immigrate', oneboostImmigrate, train_xx, train_yy, nIter, max_iter, removesmall, sigstart, sigend)
 }
 
-BIMMACpp <- function(Immigrate, train_xx, train_yy, nIter = 10L, max_iter = 10L, removesmall = FALSE, randomw0 = TRUE, sigstart = 0.02, sigend = 4) {
-    .Call('_Immigrate_BIMMACpp', PACKAGE = 'Immigrate', Immigrate, train_xx, train_yy, nIter, max_iter, removesmall, randomw0, sigstart, sigend)
-}
-
 IM4ECpp <- function(oneIM4E, train_xx, train_yy, epsilon = 0.01, sig = 1, lambda = 1, max_iter = 10L, removesmall = FALSE) {
     .Call('_Immigrate_IM4ECpp', PACKAGE = 'Immigrate', oneIM4E, train_xx, train_yy, epsilon, sig, lambda, max_iter, removesmall)
 }
@@ -19,9 +15,5 @@ ImmigrateCpp <- function(oneImmigrate, train_xx, train_yy, w0, epsilon = 0.01, s
 
 ImmigrateSampleCpp <- function(onesampleImmigrate, train_xx, train_yy, sample_wt, W, epsilon = 0.01, sig = 1, max_iter = 10L, removesmall = FALSE) {
     .Call('_Immigrate_ImmigrateSampleCpp', PACKAGE = 'Immigrate', onesampleImmigrate, train_xx, train_yy, sample_wt, W, epsilon, sig, max_iter, removesmall)
-}
-
-imIM4ECpp <- function(oneimIM4E, train_xx, train_yy, epsilon = 0.01, sig = 1, rho = 1, lambda = 1, max_iter = 10L, removesmall = FALSE) {
-    .Call('_Immigrate_imIM4ECpp', PACKAGE = 'Immigrate', oneimIM4E, train_xx, train_yy, epsilon, sig, rho, lambda, max_iter, removesmall)
 }
 

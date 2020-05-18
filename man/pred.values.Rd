@@ -42,5 +42,4 @@ re<-pred.values(y_train,y_test,pred_train,pred_test)
 print(re)
 
 }
-\keyword{predict,}
-\keyword{values}
+\keyword{predict}

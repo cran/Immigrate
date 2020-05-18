@@ -21,7 +21,7 @@ List IM4ECpp(Function oneIM4E,NumericMatrix train_xx,NumericVector train_yy,doub
     while ( (fabs(c_before - c_after)>epsilon)&&(iter< max_iter)  ){
     w_before = w_after;
     c_before = c_after;
-    List res = oneIM4E(train_xx,train_yy,w_before,sig=sig,lambda=lambda);
+    List res = oneIM4E(train_xx,train_yy,w_before,sig,lambda);
     w_after = res["w"];
     c_after = res["C"];
     iter++;
@@ -30,7 +30,7 @@ List IM4ECpp(Function oneIM4E,NumericMatrix train_xx,NumericVector train_yy,doub
     while ( (fabs(c_before - c_after)>epsilon)&&(iter< max_iter)  ){
     w_before = w_after;
     c_before = c_after;
-    List res = oneIM4E(train_xx,train_yy,w_before,sig=sig,lambda=lambda);
+    List res = oneIM4E(train_xx,train_yy,w_before,sig,lambda);
     w_after = res["w"];
     for ( int j = 0 ; j < w_after.size(); j++ ){
     if(w_after[j] < 1/p){

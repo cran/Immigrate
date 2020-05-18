@@ -25,7 +25,7 @@
 \item{class}{preded class for xx}
 }
 \description{
-This function performs the predion for BIM algorithm.
+This function performs the predition for BIM algorithm.
 }
 \examples{
 data(park)

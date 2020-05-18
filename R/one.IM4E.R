@@ -31,7 +31,7 @@ one.IM4E<-function(train_xx,train_yy,w,sig=1,lambda=1){
     s1<-sum(tmp1)
     if (s1 != 0 ) tmp1<-tmp1/s1
     tmp0[i]<-1
-    entropy <- entropy + sum(tmp0-tmp1)*log(abs(tmp0-tmp1))
+    entropy <<- entropy + sum((tmp0-tmp1)*log(abs(tmp0-tmp1)))
     tmp0[i]<-0
     abs(t(train_xx)-as.numeric(train_xx[i,]))%*%(tmp0-tmp1)
   })

@@ -19,7 +19,7 @@ List ImmigrateCpp(Function oneImmigrate,NumericMatrix train_xx,NumericVector tra
        while ( (fabs(c_before - c_after)>epsilon)&&(iter< max_iter)  ){
        w_before = w_after;
        c_before = c_after;
-       List res = oneImmigrate(train_xx,train_yy,w_before,sig=sig);
+       List res = oneImmigrate(train_xx,train_yy,w_before,sig);
        NumericMatrix tmp = res["w"];
        w_after = tmp;
        c_after = res["C"];
@@ -29,10 +29,10 @@ List ImmigrateCpp(Function oneImmigrate,NumericMatrix train_xx,NumericVector tra
        while ( (fabs(c_before - c_after)>epsilon)&&(iter< max_iter)  ){
        w_before = w_after;
        c_before = c_after;
-       List res = oneImmigrate(train_xx,train_yy,w_before,sig=sig);
+       List res = oneImmigrate(train_xx,train_yy,w_before,sig);
        NumericMatrix tmp = res["w"];
        w_after = tmp;
-       for ( int i = 0; i <w_after.ncol();i++){
+       for ( int i = 0; i < w_after.ncol();i++){
        for ( int j  = w_after.nrow()-1; j >=i; j-- ){
        if (w_after(i,j) < 1/p ){
        w_after(i,j) = 0;

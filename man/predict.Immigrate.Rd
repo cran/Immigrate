@@ -4,8 +4,7 @@
 \alias{predict.Immigrate}
 \title{predict.Immigrate}
 \usage{
-\method{predict}{Immigrate}(object, xx, yy, newx, sig = 1,
-  type = "both", ...)
+\method{predict}{Immigrate}(object, xx, yy, newx, sig = 1, type = "both", ...)
 }
 \arguments{
 \item{object}{result of Immigrate algorithm}
@@ -28,7 +27,7 @@
 \item{class}{preded class for newx}
 }
 \description{
-This function performs the predion for Immigrate(Iterative Max-Min Entropy Margin-Maximization with Interaction Terms) algorithm.
+This function performs the predition for Immigrate(Iterative Max-Min Entropy Margin-Maximization with Interaction Terms) algorithm.
 }
 \examples{
 data(park)

@@ -18,6 +18,7 @@
 #' re<-one.Immigrate(xx,yy,W0)
 #' print(re$w)
 #' 
+
 one.Immigrate<-function(train_xx,train_yy,W,sig=1){
   # compute the sample size and the number of variables
   N<-nrow(train_xx)
@@ -39,7 +40,7 @@ one.Immigrate<-function(train_xx,train_yy,W,sig=1){
     s1<-sum(tmp1)
     if (s1 != 0 ) tmp1<-tmp1/s1
     tmp0[i]<-1
-    entropy <- entropy + sum(tmp0-tmp1)*log(abs(tmp0-tmp1))
+    entropy <<- entropy + sum((tmp0-tmp1)*log(abs(tmp0-tmp1)))
     tmp0[i]<-0
     MM<<-MM+abs(t(train_xx)-as.numeric(train_xx[i,]))%*%
       ((tmp0-tmp1)*t(abs(t(train_xx)-as.numeric(train_xx[i,]))))

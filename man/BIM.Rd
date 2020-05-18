@@ -4,8 +4,15 @@
 \alias{BIM}
 \title{BIM}
 \usage{
-BIM(xx, yy, nBoost = 3, max_iter = 5, removesmall = FALSE,
-  sigstart = 0.02, sigend = 4)
+BIM(
+  xx,
+  yy,
+  nBoost = 3,
+  max_iter = 5,
+  removesmall = FALSE,
+  sigstart = 0.02,
+  sigend = 4
+)
 }
 \arguments{
 \item{xx}{model matrix of explanatory variables}

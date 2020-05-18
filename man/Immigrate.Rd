@@ -4,8 +4,16 @@
 \alias{Immigrate}
 \title{Immigrate}
 \usage{
-Immigrate(xx, yy, w0, epsilon = 0.01, sig = 1, max_iter = 10,
-  removesmall = FALSE, randomw0 = FALSE)
+Immigrate(
+  xx,
+  yy,
+  w0,
+  epsilon = 0.01,
+  sig = 1,
+  max_iter = 10,
+  removesmall = FALSE,
+  randomw0 = FALSE
+)
 }
 \arguments{
 \item{xx}{model matrix of explanatory variables}

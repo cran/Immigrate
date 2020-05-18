@@ -4,8 +4,15 @@
 \alias{IM4E}
 \title{IM4E}
 \usage{
-IM4E(xx, yy, epsilon = 0.01, sig = 1, lambda = 1, max_iter = 10,
-  removesmall = FALSE)
+IM4E(
+  xx,
+  yy,
+  epsilon = 0.01,
+  sig = 1,
+  lambda = 1,
+  max_iter = 10,
+  removesmall = FALSE
+)
 }
 \arguments{
 \item{xx}{model matrix of explanatory variables}

@@ -4,8 +4,7 @@
 \alias{predict.IM4E}
 \title{predict.IM4E}
 \usage{
-\method{predict}{IM4E}(object, xx, yy, newx, sig = 1, type = "both",
-  ...)
+\method{predict}{IM4E}(object, xx, yy, newx, sig = 1, type = "both", ...)
 }
 \arguments{
 \item{object}{weight or result of IM4E algorithm}
@@ -28,7 +27,7 @@
 \item{class}{ preded class for newx}
 }
 \description{
-This function performs the predion for IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
+This function performs the predition for IM4E(Iterative Margin-Maximization under Max-Min Entropy) algorithm.
 }
 \examples{
 data(park)

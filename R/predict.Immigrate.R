@@ -1,6 +1,6 @@
 #' predict.Immigrate
 #'
-#' This function performs the predion for Immigrate(Iterative Max-Min Entropy Margin-Maximization with Interaction Terms) algorithm.
+#' This function performs the predition for Immigrate(Iterative Max-Min Entropy Margin-Maximization with Interaction Terms) algorithm.
 #' @param object result of Immigrate algorithm
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector 

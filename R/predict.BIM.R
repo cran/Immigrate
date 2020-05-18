@@ -1,6 +1,6 @@
 #' predict.BIM
 #'
-#' This function performs the predion for BIM algorithm.
+#' This function performs the predition for BIM algorithm.
 #' @param object result of BIM algorithm
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector

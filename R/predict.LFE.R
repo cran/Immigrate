@@ -1,6 +1,6 @@
 #' predict.LFE
 #'
-#' This function performs predion for LFE(Local Feature Extraction) algorithm.
+#' This function performs predition for LFE(Local Feature Extraction) algorithm.
 #' @param object weight 
 #' @param xx model matrix of explanatory variables
 #' @param yy label vector 
